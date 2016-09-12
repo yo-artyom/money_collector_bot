@@ -6,11 +6,21 @@ require 'logger'
 
 token = '289589948:AAFUQteT6NOMm6-kMHl51MM5tjGIkBpqDsc'
 
-Telegram::Bot::Client.run(token, logger: Logger.new($stdout)) do |bot|
-  chat_id = nil
+stickers = %w{BQADBAADxQADXoD0Be6MWaqIBanrAg BQADBAADzQADXoD0BfaPN-SRlpBYAg BQADBAADAQEAAl6A9AVrEFjvEfTbRwI BQADBAADOQEAAl6A9AWLW7oQoiHXdAI BQADBAADMgEAAl6A9AWiXNcdh4N2fgI BQADBAADBwEAAl6A9AXuD8xAc5avLwI BQADBAADxwADXoD0BaTJK9_y3lrtAg BQADBAADyQADXoD0BYyFKrC9hFpcAg BQADBAADywADXoD0BaJ-5YWTuZxTAg BQADBAADzwADXoD0BactihrL_9LKAg BQADBAAD0QADXoD0BSpSmkpuw-bdAg BQADBAAD0wADXoD0Be78EoQarSx7Ag BQADBAAD1QADXoD0BWz6w04xdGpDAg BQADBAAD1wADXoD0BQAB1ns8W0sL4QI BQADBAAD2QADXoD0BXMvefVIHSa6Ag BQADBAAD3QADXoD0BU6pJCFcA4RZAg BQADBAAD3wADXoD0BTvYi5kNxey9Ag BQADBAAD4QADXoD0BU7kxmr_Ex3qAg BQADBAAD4wADXoD0BUg7b716tItIAg BQADBAAD5QADXoD0BWz9YpMR9SSVAg BQADBAAD7QADXoD0BRIJKh4BmOXZAg BQADBAAD6wADXoD0Bbi4Fg2kp0fUAg BQADBAAD6QADXoD0BdMVJ6xHzFLiAg BQADBAAD5wADXoD0BarEkUGb-sCrAg BQADBAAD-wADXoD0BUn3lSmA47huAg BQADBAAD_gADXoD0BcXWzqDZ_m1ZAg BQADBAADAwEAAl6A9AX0ijgIC5NWQwI BQADBAADBQEAAl6A9AUNpknMlGbq-QI BQADBAADDgEAAl6A9AVh6c8sBWo7uwI BQADBAADDAEAAl6A9AXhtdSxvTfEowI BQADBAADCgEAAl6A9AUwQGGFgHjqgwI BQADBAADCAEAAl6A9AU1UIOQ2kvhSwI BQADBAADEAEAAl6A9AUm8iNFx9Q59wI BQADBAADEQEAAl6A9AVbM1NKVOboMwI BQADBAADEwEAAl6A9AWJu1aOj0ZVFwI BQADBAADFQEAAl6A9AUSDwNznjCuKwI BQADBAADHQEAAl6A9AX4wmawIaIQhAI BQADBAADGwEAAl6A9AVZBnQ814upDgI BQADBAADGQEAAl6A9AXsgc03bysAAbsC BQADBAADFwEAAl6A9AUY58hdk3xeuAI BQADBAADKAEAAl6A9AVW-TbYRvBtegI BQADBAADKgEAAl6A9AWvXurOxUv77gI BQADBAADLAEAAl6A9AUdvoRJGoT8ZAI BQADBAADLwEAAl6A9AVVwJD_W1ox-QI BQADBAADQQEAAl6A9AWiuNb2RY357wI BQADBAADPgEAAl6A9AXK0HXbq8_TGwI BQADBAADNQEAAl6A9AV1369SdCIaAwI BQADBAADQgEAAl6A9AXyf7ATWAuNQQI BQADBAADRAEAAl6A9AXcUNloonfGwgI BQADBAADOwEAAl6A9AWUSz6Y1n2cbwI BQADBAADjQADAU-yB2OAkEN-nygAAQI BQADBAADiwADAU-yBwnWb7kC0u0cAg BQADBAADvwADAU-yB23suwSpAAHh7wI BQADBAAD7QEAAgFPsgfnz1Fubxx4VwI }
 
+messages = ['Ролин н смокин', 'Время перерыва', 'Отдохни немножко' ]
+
+
+Telegram::Bot::Client.run(token, logger: Logger.new($stdout)) do |bot|
   bot.listen do |message|
-    bot.api.send_message(chat_id: message.chat.id, text: "cron")
+    # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
+    # bot.api.sendMessage(chat_id: message.chat.id, text: messages.sample)
+    # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
+    # bot.api.sendMessage(chat_id: message.chat.id, text: '4:20 братки')
+    bot.api.send_sticker(chat_id:  56983310, sticker: stickers.sample)
+    bot.api.sendMessage(chat_id:  56983310, text: messages.sample)
+    bot.api.send_sticker(chat_id:  56983310, sticker: stickers.sample)
+    bot.api.sendMessage(chat_id:  56983310, text: '4:20 братки')
     break
   end
 end
