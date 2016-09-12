@@ -12,15 +12,13 @@ messages = ['Ролин н смокин', 'Время перерыва', 'Отд
 
 
 Telegram::Bot::Client.run(token, logger: Logger.new($stdout)) do |bot|
-  bot.listen do |message|
-    # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
-    # bot.api.sendMessage(chat_id: message.chat.id, text: messages.sample)
-    # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
-    # bot.api.sendMessage(chat_id: message.chat.id, text: '4:20 братки')
-    bot.api.send_sticker(chat_id:  56983310, sticker: stickers.sample)
-    bot.api.sendMessage(chat_id:  56983310, text: messages.sample)
-    bot.api.send_sticker(chat_id:  56983310, sticker: stickers.sample)
-    bot.api.sendMessage(chat_id:  56983310, text: '4:20 братки')
-    break
-  end
+  # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
+  # bot.api.sendMessage(chat_id: message.chat.id, text: messages.sample)
+  # bot.api.send_sticker(chat_id: message.chat.id, sticker: stickers.sample)
+  # bot.api.sendMessage(chat_id: message.chat.id, text: '4:20 братки')
+  bot.api.send_sticker(chat_id:  '-130047508', sticker: stickers.sample)
+  bot.api.sendMessage(chat_id:  '-130047508', text: messages.sample)
+  bot.api.send_sticker(chat_id:  '-130047508', sticker: stickers.sample)
+  bot.api.sendMessage(chat_id:  '-130047508', text: '4:20 братки')
+  break
 end
